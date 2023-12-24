@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 class="mb-6 pb-3 border-b">Payment</h1>
+
     <form>
       <div class="mb-4">
         <label class="mb-4 d-block">Card number</label>
@@ -34,6 +35,12 @@
           />
         </label>
       </div>
+      <v-select
+        v-model="cardType"
+        label="Card"
+        :items="options"
+        variant="outlined"
+      ></v-select>
       <VBtn class="w-100" size="large" color="primary">Submit</VBtn>
     </form>
   </div>
@@ -50,6 +57,8 @@ export default {
         car_holder_name: "",
         CVV: "",
       },
+      cardType: "",
+      options: ["Visa", "Master Card"],
     };
   },
   methods: {
